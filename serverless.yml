@@ -1,0 +1,50 @@
+# Welcome to Serverless!
+service: startwar-serverless
+frameworkVersion: "2"
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  stage: ${opt:stage, 'development'}
+
+  timeout: 60
+  memorySize: 512
+  environment: ${file(./serverless/environment.yml):environment}
+  iamRoleStatements: ${file(./serverless/config/permissions.yml)}
+
+# Custom
+custom:
+  tableNamePeople: "People-${self:provider.stage}"
+
+# Functions
+functions:
+# firt service:
+  planet:
+    handler: src/controllers/PlanetController.handler
+    environment:
+      FN_STATUS: enabled
+    events:
+      - http:
+          path: /planet
+          method: get
+# second service:
+  people:
+    handler: src/controllers/PeopleController.handler
+    environment:
+      FN_STATUS: enabled
+    events:
+      - http:
+          path: /people/{action}
+          method: get
+
+      - http:
+          path: /people/{action}
+          method: post
+
+# you can add CloudFormation resource templates here
+resources:
+  Resources: ${file(./serverless/config/resources.yml)}

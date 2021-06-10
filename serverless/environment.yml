@@ -1,0 +1,4 @@
+environment:
+  # TABLE_NAME_PEOPLE: "People-${self:provider.stage}"
+  TABLE_NAME_PEOPLE: ${self:custom.tableNamePeople}
+  SWAPI_URL: "https://swapi.py4e.com/api"

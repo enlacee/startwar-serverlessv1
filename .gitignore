@@ -1,0 +1,12 @@
+# package directories
+node_modules
+jspm_packages
+
+# package files
+yarn.lock
+
+# Serverless directories
+.serverless
+
+# Test directories
+.coverage

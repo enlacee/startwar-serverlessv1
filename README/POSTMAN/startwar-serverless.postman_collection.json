@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "903633bf-56a9-45a4-b05e-ad5a22751d91",
+		"name": "startwar-serverless",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/development/planet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/development/planet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"development",
+						"planet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/development/people/getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/development/people/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"development",
+						"people",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/development/people/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Pepe\",\n    \"apellido\": \"Rios\",\n    \"dni\": \"34587989\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/development/people/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"development",
+						"people",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
